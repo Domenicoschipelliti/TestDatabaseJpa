@@ -1,7 +1,8 @@
 package Domenico;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
-
+@Entity
 public class Rivista extends CatalogoBibliotecario{
 
 

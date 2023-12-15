@@ -1,11 +1,8 @@
 package Domenico;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDate;
-
+@Entity
 public class Utente extends  CatalogoBibliotecario{
     private String nome;
     private String cognome;
@@ -13,7 +10,6 @@ public class Utente extends  CatalogoBibliotecario{
 
     @JoinColumn
     @GeneratedValue
-    @OneToMany
     private long numeroTessera;
 
     public Utente(String nome,String cognome,LocalDate dataDiNascita,String titolo) {

@@ -1,12 +1,15 @@
 package Domenico;
 
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
-
+@Entity
 public class Prestito extends CatalogoBibliotecario{
-
+    @OneToOne
     private Utente utente;
-    @ManyToOne
+
     private ElementoPrestato elementoPrestato;
 
     private LocalDate dataInizioPrestito;
