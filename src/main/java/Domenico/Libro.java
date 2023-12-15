@@ -1,10 +1,13 @@
 package Domenico;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 @Entity
 public class Libro extends CatalogoBibliotecario{
     private String autore;
+    @Enumerated(EnumType.STRING)
     private Genere genere;
 
     public Libro(String titolo, LocalDate annoDiPubblicazione, int numeroPagine, String autore,Genere genere) {

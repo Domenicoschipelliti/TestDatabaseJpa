@@ -1,24 +1,23 @@
 package Domenico;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
 public class Prestito extends CatalogoBibliotecario{
     @OneToOne
     private Utente utente;
-
+    @Enumerated(EnumType.STRING)
     private ElementoPrestato elementoPrestato;
 
     private LocalDate dataInizioPrestito;
     private LocalDate dataRestituzionePrevista;
     private LocalDate dataRestituzioneEffettiva;
 
-    public Prestito(String titolo, LocalDate annoDiPubblicazione, int numeroPagine, LocalDate dataInizioPrestito,LocalDate dataRestituzioneEffettiva) {
+    public Prestito(String titolo, LocalDate annoDiPubblicazione, int numeroPagine, LocalDate dataInizioPrestito,LocalDate dataRestituzionePrevista,LocalDate dataRestituzioneEffettiva,ElementoPrestato elementoPrestato) {
         super(titolo, annoDiPubblicazione, numeroPagine);
         this.dataInizioPrestito = dataInizioPrestito;
+        this.dataRestituzionePrevista=dataRestituzionePrevista;
+        this.elementoPrestato=elementoPrestato;
         this.dataRestituzioneEffettiva=dataRestituzioneEffettiva;
     }
 
